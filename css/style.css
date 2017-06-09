@@ -1,0 +1,170 @@
+/* Variables */
+/* Mixins =================================================== */
+/* Typography */
+input[type="text"].form-control,
+input[type="email"].form-control,
+input[type="password"].form-control,
+input[type="number"].form-control,
+input[type="file"].form-control,
+select.form-control,
+textarea.form-control {
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  height: 38px;
+  box-shadow: none;
+}
+
+input[type="text"].form-control:hover, input[type="text"].form-control:active, input[type="text"].form-control:focus,
+input[type="email"].form-control:hover,
+input[type="email"].form-control:active,
+input[type="email"].form-control:focus,
+input[type="password"].form-control:hover,
+input[type="password"].form-control:active,
+input[type="password"].form-control:focus,
+input[type="number"].form-control:hover,
+input[type="number"].form-control:active,
+input[type="number"].form-control:focus,
+input[type="file"].form-control:hover,
+input[type="file"].form-control:active,
+input[type="file"].form-control:focus,
+select.form-control:hover,
+select.form-control:active,
+select.form-control:focus,
+textarea.form-control:hover,
+textarea.form-control:active,
+textarea.form-control:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-green {
+  background: #6fb83f;
+}
+
+.btn-green:hover, .btn-green:active, .btn-green:focus {
+  background: #589232 !important;
+}
+
+/* header */
+.navbar.main-nav {
+  margin-bottom: 0;
+  border: none;
+}
+
+.navbar.main-nav .navbar-header .navbar-brand {
+  padding: 5px 15px;
+}
+
+.navbar.main-nav .navbar-header .navbar-brand img {
+  height: 40px;
+}
+
+.navbar.main-nav .nav.navbar-right li:last-of-type a {
+  color: white;
+  border-radius: 15px;
+  padding: 4px 15px;
+  margin: 10px 0;
+}
+
+/* Site */
+/* Page ==================================== */
+body {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #4a4a4a;
+  height: 100%;
+  overflow-x: hidden;
+  background: white;
+  padding-top: 50px;
+}
+
+.header-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.header-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(74deg, #004263 0%, rgba(6, 137, 183, 0.5) 100%);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.header-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: initial;
+  object-position: top;
+  position: absolute;
+}
+
+.header-wrapper .banner-text {
+  color: white;
+  width: 40%;
+  position: relative;
+  z-index: 3;
+}
+
+.header-wrapper .banner-text h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 7rem;
+}
+
+.header-wrapper .banner-text h3 {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2rem;
+  width: 80%;
+}
+
+.intro-wrapper {
+  padding: 80px 0;
+}
+
+.intro-wrapper .intro > img {
+  position: absolute;
+  top: 22px;
+}
+
+.intro-wrapper .intro h3 {
+  margin-left: 82px;
+}
+
+.intro-wrapper .intro p {
+  margin-top: 35px;
+  line-height: 24px;
+  font-size: 1.5rem;
+}

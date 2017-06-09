@@ -1,0 +1,49 @@
+/* Typography */
+
+// FORM FIELDS ===========================
+input[type="text"].form-control,
+input[type="email"].form-control,
+input[type="password"].form-control,
+input[type="number"].form-control,
+input[type="file"].form-control,
+select.form-control,
+textarea.form-control {
+	-webkit-appearance: none;
+	box-shadow: none;
+	outline: none;
+	//border: 1px solid $borderColor;
+	height: 38px;
+	//background: $lightGrey;
+	box-shadow: none;
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none;
+		box-shadow: none !important;
+	}
+}
+
+// LINKS ====================================================
+a {
+	//color: $linkColor;
+	text-decoration: none;
+	@include transition(all .3s ease);
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none !important;
+		outline: none !important;
+		box-shadow: none !important;
+		//color: $orange !important;
+	}
+}
+
+// BUTTONS =================================
+.btn-green {
+	background: $green;
+	&:hover,
+	&:active,
+	&:focus {
+		background: $darkgreen !important;
+	}
+}

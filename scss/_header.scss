@@ -1,0 +1,23 @@
+/* header */
+.navbar.main-nav {
+  margin-bottom: 0;
+  border: none;
+  .navbar-header {
+    .navbar-brand {
+      padding: 5px 15px;
+      img {
+        height: 40px;
+      }
+    }
+  }
+  .nav.navbar-right {
+    li:last-of-type {
+      a {
+        color: $white;
+        @include rounded(15px);
+        padding: 4px 15px;
+        margin: 10px 0;
+      }
+    }
+  }
+}
