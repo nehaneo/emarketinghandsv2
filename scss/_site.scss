@@ -1,87 +1,318 @@
 /* Site */
 
+html {
+    font-size: 16px;
+}
+
+
 /* Page ==================================== */
+
 body {
-  width: 100%;
-  font-family: $baseFont;
-  font-size: $baseFontSize;
-  font-weight: $baseFontWeight;
-  line-height: $baseLineHeight;
-  color: $baseTextColor;
-  height: 100%;
-  overflow-x: hidden;
-  background: $white;
-  padding-top: 50px;
+    width: 100%;
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    font-weight: $baseFontWeight;
+    line-height: $baseLineHeight;
+    color: $baseTextColor;
+    height: 100%;
+    background: $white;
+}
+
+.section-common {
+    padding: 100px 0;
+}
+
+//parallax============================
+.parallax-container {
+    @include parallax();
+}
+
+.parallax__group {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.parallax__layer {
+    @include position-absolute;
+    z-index: 1;
+}
+
+.parallax__layer--base>div,
+.parallax__layer--fore>div {
+    background-color: #fff;
+}
+
+.parallax__layer--fore {
+    // -webkit-transform: translateZ(90px);
+    // --translate-Z: 0px;
+    // transform: translateZ(var(--translate-Z));
+    transform: translateZ(1px) scale(-1);
+    z-index: 3;
+}
+
+.parallax__layer--base {
+    transform: translateZ(0) scale(1);
+    z-index: 2;
+}
+
+.parallax__layer--back {
+    transform: translateZ(-1px) scale(2);
+    ;
+}
+
+// button ===========================
+.btn-common {
+    @include btn();
+}
+
+.btn-green {
+    background-color: #6fb83f;
+}
+
+.btn-red {
+    background-color: $light-red;
+}
+
+.btn-blue {
+    background-color: #4A90E2;
 }
 
 // HOME PAGE ===========================
-.header-wrapper {
-  @include flexbox();
-  align-items: center;
-  position: relative;
-  height: 560px;
-  overflow: hidden;
-  z-index: 1;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: -webkit-linear-gradient(74deg, #004263 0%, rgba(6,137,183,0.5) 100%);
-    background: -moz-linear-gradient(74deg, #004263 0%, rgba(6,137,183,0.5) 100%);
-    background: -o-linear-gradient(74deg, #004263 0%, rgba(6,137,183,0.5) 100%);
-    background: linear-gradient(74deg, #004263 0%, rgba(6,137,183,0.5) 100%);
-    opacity: 0.5;
-    z-index: 2;
-    }
-
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: initial;
-    object-position: top;
-    position: absolute;
-  }
-
-  .banner-text {
-    color: $white;
-    width: 40%;
+//top-navbar ===========================
+.top-bar-container {
     position: relative;
-    z-index: 3;
-    h1 {
-      font-family: $oswald;
-      font-size: 7rem;
+    .top-bar-title {
+        img {
+            height: 2.1223rem;
+        }
     }
-    h3 {
-      font-family: $lato;
-      font-style: italic;
-      font-weight: 300;
-      font-size: 2rem;
-      width: 80%;
+    .top-bar-menu {
+        float: right;
+        padding: 0.5rem 1rem 0.5rem 0;
     }
-  }
+    .top-bar-right ul {
+        @include position-center-vertically();
+        left: initial;
+    }
+}
+
+.header-wrapper {
+    position: relative;
+    height: 75%;
+    z-index: 1;
+    top: -101px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(74deg, #004263 0%, rgba(6, 137, 183, 0.5) 100%);
+        background: -moz-linear-gradient(74deg, #004263 0%, rgba(6, 137, 183, 0.5) 100%);
+        background: -o-linear-gradient(74deg, #004263 0%, rgba(6, 137, 183, 0.5) 100%);
+        background: linear-gradient(74deg, #004263 0%, rgba(6, 137, 183, 0.5) 100%);
+        opacity: 0.5;
+        z-index: 2;
+    }
+    .hero-banner {
+        background-image: url(../img/banner-bg.png);
+        @include background__image();
+    }
+    .banner-text {
+        color: white;
+        width: 40%;
+        z-index: 3;
+        position: absolute;
+        top: 50%;
+        transform: translate(-25%, -50%);
+        left: 25%;
+        h1 {
+            font-family: $oswald;
+            font-size: 5rem;
+        }
+        h3 {
+            font-family: $lato;
+            font-weight: 400;
+            font-style: italic;
+            width: 25rem;
+            font-size: 1.345rem;
+        }
+    }
 }
 
 .intro-wrapper {
-  padding: 80px 0;
+    .intro {
+        img {
+            max-width: 65px;
+        }
+        h3 {
+            line-height: 25px;
+            font-size: 20px;
+        }
+        p {
+            margin-top: 35px;
+            line-height: 24px;
+        }
+    }
+}
 
-  .intro {
-    > img {
-      position: absolute;
-      top: 22px;
+.content-wrapper {
+    .heading {
+        margin-bottom: 25px;
     }
-    h3 {
-      margin-left: 82px;
+    .content {
+        margin: 30px 0;
     }
-    p {
-      margin-top: 35px;
-      line-height: 24px;
-      font-size: 1.5rem;
+}
+
+.macbook-img-wrapper {
+    img {
+        position: relative;
+        left: -15%;
+        width: 100%;
     }
-  }
+}
+
+.services-wrapper {
+    margin-bottom: 35px;
+    .service {
+        @include clearfix();
+        margin-bottom: 15px;
+        i {
+            width: 15%;
+            float: left;
+            font-size: 30px;
+        }
+        span {
+            width: 85%;
+            float: left;
+            font-weight: 700;
+            font-size: 16px;
+        }
+    }
+}
+
+.marketing-team-section1 {
+    text-align: center;
+    .marketing-item {
+        .img-wrapper {
+            img {
+                max-width: 150px;
+                text-align: center
+            }
+        }
+        .text-wrapper {
+            color: #000;
+            text-transform: uppercase;
+            h3 {
+                font-weight: 600;
+                font-size: 26px;
+                letter-spacing: -1px;
+            }
+            h4 {
+                font-weight: 500;
+                letter-spacing: 3px;
+            }
+        }
+    }
+}
+
+.marketing-team-section2 {
+    margin-top: 50px;
+    border-top: 2px solid #eaeaea;
+    padding-top: 35px;
+    .row {
+        padding: 0 45px;
+    }
+    .marketing-item {
+        margin-bottom: 20px;
+    }
+    .buttons {
+        margin-bottom: 20px;
+        a+a {
+            margin-left: 15px;
+        }
+    }
+}
+
+.ithands-websites {
+    margin-bottom: 40px;
+    .ithands-websites-in {
+        position: relative;
+        cursor: pointer;
+        &:before {
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            content: '';
+            @include position-absolute;
+        }
+        &:after {
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            content: '';
+            @include position-absolute;
+        }
+        &:hover:before,
+        &:hover:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+}
+
+footer {
+    .contact-us-section {
+        background: url('../img/contact-bg.png') no-repeat;
+        background-size: cover;
+        color: #fff;
+        >.row {
+            min-height: 415px;
+            position: relative;
+        }
+        .content-wrapper {
+            @include position-center-vertically;
+        }
+        .get-quote {
+            text-align: center;
+        }
+    }
+    .ithands-section {
+        border-bottom: 4px solid $light-red;
+        .logo {
+            margin-bottom: 5px;
+        }
+        ul {
+            margin-top: 20px;
+            li {
+                width: 30px;
+                height: 30px;
+                border-radius: 50px;
+                border: 1px solid #979797;
+                i {
+                    padding: 6px 0;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 20px;
+            span {
+                color: $light-red;
+            }
+        }
+    }
 }

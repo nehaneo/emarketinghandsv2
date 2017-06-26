@@ -1,20 +1,20 @@
 /* Typography */
 
 // FORM FIELDS ===========================
-input[type="text"].form-control,
-input[type="email"].form-control,
-input[type="password"].form-control,
-input[type="number"].form-control,
-input[type="file"].form-control,
-select.form-control,
-textarea.form-control {
-	-webkit-appearance: none;
+[type="text"],
+[type="email"],
+[type="password"],
+[type="number"],
+[type="file"],
+select,
+textarea {
+	// -webkit-appearance: none;
 	box-shadow: none;
 	outline: none;
 	//border: 1px solid $borderColor;
-	height: 38px;
+	height: 47px;
 	//background: $lightGrey;
-	box-shadow: none;
+	border-radius: 10px;
 	&:hover,
 	&:active,
 	&:focus {
@@ -46,4 +46,10 @@ a {
 	&:focus {
 		background: $darkgreen !important;
 	}
+}
+//headings=============================
+h2 {
+	color: $light-red;
+	font-weight: 700;
+	font-size: 2.25rem;
 }

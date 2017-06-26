@@ -2,28 +2,61 @@
 
 // @include rounded(VALUE);
 @mixin rounded($radius:4px) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
   border-radius: $radius;
 }
 
 // @include transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
 @mixin transition($transition) {
-  -webkit-transition: $transition;
-  -moz-transition: $transition;
-  -ms-transition: $transition;
-  -o-transition: $transition;
   transition: $transition;
 }
 
 @mixin flexbox() {
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
--webkit-flex-wrap: wrap;
-flex-wrap: wrap;
--webkit-flex-direction: row;
-flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin parallax() {
+   --perspective: 1px;
+   perspective: var(--perspective);
+   height: 100vh;
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
+@mixin background__image() {
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+@mixin position-absolute() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@mixin position-center-vertically() {
+  @include position-absolute();
+  bottom:initial;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+@mixin btn($radius:50px) {
+  border-radius: $radius;
+  padding: 14px 20px;
+  color: white;
+  background-color: #9B9B9B;
+  display: inline-block;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

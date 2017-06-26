@@ -2,15 +2,27 @@
   "name": "scss-gulp-boilerplate",
   "version": "1.0.0",
   "description": "Rapid development boilerplate for sass projects",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp"
   },
   "author": "Natalie Neha",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "https://registry.npmjs.org/gulp/-/gulp-3.9.1.tgz",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-sass": "^3.1.0"
-  }
+    "gulp-sass": "https://registry.npmjs.org/gulp-sass/-/gulp-sass-3.1.0.tgz"
+  },
+  "dependencies": {
+    "gulp": "https://registry.npmjs.org/gulp/-/gulp-3.9.1.tgz",
+    "gulp-sass": "https://registry.npmjs.org/gulp-sass/-/gulp-sass-3.1.0.tgz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nehaneo/emarketinghandsv2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nehaneo/emarketinghandsv2/issues"
+  },
+  "homepage": "https://github.com/nehaneo/emarketinghandsv2#readme"
 }
